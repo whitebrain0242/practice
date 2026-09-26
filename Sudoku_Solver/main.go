@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func solve(board *[9][9]int)bool  {
 	for row:=0;row<9;row++{
 		for col:=0;col<9;col++{
@@ -49,6 +51,26 @@ func isValid(board *[9][9]int,row int,col int,num int)bool{
 	}
 	return true
 }
+func printBoard(board *[9][9]int)bool{
+	for i:=0;i<9;i++{
+		for j:=0;j<9;j++{
+			fmt.Print(board[i][j]," ")
+		}
+		fmt.Println()
+	}
+	return true
+}
 func main()  {
+    var board [9][9]int
+	for i:=0;i<9;i++{
+		for j:=0;j<9;j++{
+			fmt.Scan(&board[i][j])
+		}
+	}
+	if solve(&board){
+		printBoard(&board)
+	}else{
+		fmt.Println("无解")
+	}
 
 }
