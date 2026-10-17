@@ -49,7 +49,7 @@ func main() { //最终执行入口
 			fmt.Printf("连接失败:%v\n", err)
 			return
 		}
-		handleCon(con)
+		go handleCon(con)
 	}
 
 }
