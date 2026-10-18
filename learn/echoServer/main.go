@@ -35,7 +35,7 @@ func handleCon(con net.Conn) {
 }
 func main() { //最终执行入口
 	//首先开始监听
-	listener, err := net.Listen("tcp", "127.0.0.1:8000")
+	listener, err := net.Listen("tcp", "0.0.0.0:8000")
 	if err != nil {
 		fmt.Printf("监听失败:%v\n", err) //使用Println的花是4识别不了参数的i直接输出了
 		return
